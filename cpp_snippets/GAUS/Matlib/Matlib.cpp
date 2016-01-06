@@ -28,7 +28,7 @@ namespace Mat
   namespace Utils
   {
     template <typename T>
-    Vector<T> randi(unsigned int size, unsigned int min=0, unsigned int max=RAND_MAX)
+    Vector<T> randi(unsigned int size, unsigned int min, unsigned int max)
     {
       Vector<T> t(size);
       for(unsigned int i =0;i <size; ++i)
@@ -37,12 +37,12 @@ namespace Mat
     }
 
 
-    double box_muller_kernel()
+    double box_muller_kernel(double mu=0, double sigma=1)
     {
       double u1 =  rand() / (RAND_MAX + 1.);
       double u2 =  rand() / (RAND_MAX + 1.);
       double z = sqrt(-2*log(u1))*cos(2*PI*u2);
-      return z;
+      return (z*sigma)+mu;
     }
 
     Vector<float> randn(unsigned int size)

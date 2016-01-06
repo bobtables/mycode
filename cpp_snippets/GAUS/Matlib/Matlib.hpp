@@ -55,7 +55,7 @@ namespace Mat
     Vector<T> randi(unsigned int size, unsigned int min=0, unsigned int max=RAND_MAX);
 
     // Return single normal random
-    double box_muller_kernel();
+    double box_muller_kernel(double,double);
 
       Vector<float> randn(unsigned int size);
 
